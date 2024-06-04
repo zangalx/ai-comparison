@@ -129,7 +129,8 @@ env.bak/
 venv.bak/
 
 # Results
-results/
+results/data.csv
+results/data.json
 
 # Spyder project settings
 .spyderproject

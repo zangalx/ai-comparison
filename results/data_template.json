@@ -1,0 +1,88 @@
+{
+    "metadata": {
+        "version": "1.0",
+        "date": "2024-06-04",
+        "author": "",
+        "license": "",
+        "openSource": 0,
+        "gPT4o": "gpt-4o",
+        "gemini": "gemini-pro",
+        "claude": "claude-3-opus-20240229"
+    },
+    "data": [
+        {
+            "title": "Krabat",
+            "author": "Otfried Preu\u00dfler",
+            "genre": "Fantasy",
+            "openSource": 0,
+            "questions": [
+                {
+                    "question": "Wie half Tonda Krabat zu Beginn seiner Lehrzeit? A f\u00fcr Er half Krabat, indem er ihn mit Magie st\u00e4rkte. B f\u00fcr Er half Krabat, indem er ihm ein Messer schenkte. C f\u00fcr Er half Krabat \u00fcberhaupt nicht. D f\u00fcr Er half Krabat, indem er alle Aufgaben f\u00fcr ihn erledigte. E f\u00fcr Er half Krabat, indem er ein Grab f\u00fcr ihn aushob.",
+                    "type": "MultipleChoice",
+                    "solution": "A",
+                    "answers": {
+                        "gPT4o": "A",
+                        "gemini": "B",
+                        "claude": "B"
+                    }
+                },
+                {
+                    "question": "Gewann Krabat gegen Juro im mentalen Wettstreit? A f\u00fcr Ja, nachdem er die Locke des M\u00e4dchens erhalten hatte. B f\u00fcr Ja, immer. C f\u00fcr Ja, aber er musste einen hohen Preis zahlen. D f\u00fcr Nein, aber es war knapp. E f\u00fcr Nein, obwohl er die Locke des M\u00e4dchens erhalten hatte.",
+                    "type": "MultipleChoice",
+                    "solution": "C",
+                    "answers": {
+                        "gPT4o": "D",
+                        "gemini": "C f\u00fcr Ja, aber er musste einen hohen Preis zahlen.",
+                        "claude": "A"
+                    }
+                },
+                {
+                    "question": "Warum hatte Krabat keinen Drudenfu\u00df auf seiner Stirn, als er im dritten Lehrjahr zu M\u00fchle zur\u00fcckkehrte? A f\u00fcr Weil die Kantorka ihn von der Stirn entfernte. B f\u00fcr Weil der Regen den ihn abgewaschen hat. C f\u00fcr Weil er es sich selbst abgewaschen hat. D f\u00fcr Weil ein anderer Geselle ihn entfernte. E f\u00fcr Weil der Schwei\u00df der Arbeit ihn abgewaschen hat.",
+                    "type": "MultipleChoice",
+                    "solution": "D",
+                    "answers": {
+                        "gPT4o": "A",
+                        "gemini": "A f\u00fcr Weil die Kantorka ihn von der Stirn entfernte.",
+                        "claude": "E"
+                    }
+                },
+                {
+                    "question": "Was ist die Beziehung zwischen Krabat und Lobosch? A f\u00fcr Krabat war anfangs Freund, sp\u00e4ter Mentor Loboschs. B f\u00fcr Sie sind beide K\u00f6nige. C f\u00fcr Krabat ist Loboschs Bruder. D f\u00fcr Krabat ist Loboschs Meister. E f\u00fcr Sie k\u00f6nnen einander nicht leiden.",
+                    "type": "MultipleChoice",
+                    "solution": "A",
+                    "answers": {
+                        "gPT4o": "A",
+                        "gemini": "D f\u00fcr Krabat ist Loboschs Meister.",
+                        "claude": "D"
+                    }
+                },
+                {
+                    "question": "Was ist die Rolle von Juro in Krabat? A f\u00fcr Juro ist ein m\u00e4chtiger Mager, der seine Macht nicht \u00f6ffentlich zeigen kann und daher Krabat im geheimen unterst\u00fctzt. B f\u00fcr Der dumme Juro ist unwichtig, er kocht und putzt nur. C f\u00fcr Juro bek\u00e4mpft den Meister, besiegt ihn und gewinnt den Krieg. D f\u00fcr Juro ist insgeheim der Spitzel des Meisters und berichtet ihm alles, deswegen l\u00e4sst der Meister ihn in die Stube. E f\u00fcr Juro zwingt Krabat seinen Willen auf und macht ihn zu seinem Sklaven.",
+                    "type": "MultipleChoice",
+                    "solution": "B",
+                    "answers": {
+                        "gPT4o": "A",
+                        "gemini": "A f\u00fcr Juro ist ein m\u00e4chtiger Mager, der seine Macht nicht \u00f6ffentlich zeigen kann und daher Krabat im geheimen unterst\u00fctzt.",
+                        "claude": "A"
+                    }
+                },
+                {
+                    "question": "Unweit von ihm schreit ein K\u00e4uzchen, dann",
+                    "type": "OpenQuestion",
+                    "solution": "streicht eine Eule vorbei; wenig sp\u00e4ter entdeckt er im Sternenlicht einen alten Uhu: zum Greifen nahe sitzt er auf einem Ast und beobachtet ihn - mit dem rechten Auge, das linke fehlt ihm.",
+                    "answers": {
+                        "gPT4o": "wird alles still.",
+                        "gemini": "",
+                        "claude": ""
+                    }
+                }
+            ]
+        }
+    ],
+    "results": {
+        "countingOpenSource": 0,
+        "sumCorrectGPT4oAnswers": 4,
+        "sumCorrectGeminiAnswers": 2,
+        "sumCorrectClaudeAnswers": 2
+    }
+}

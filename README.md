@@ -12,6 +12,8 @@
 ## rename and fullfill the .env file
 enter your api keys (OpenAI, Google AI & Anthropic)
 
+## rename the results/data_template.json
+rename this file to 'data.json'
+
 ## run the main.py file
-A csv file will be generated in the new results folder. You have now the chance to enter a question per row. 
-With the next run the answers will be added, each LLM Model on their own. 
+the programm will enter the answered questions into the json file. You can also add new books and questions, in the same json format. 
