@@ -131,6 +131,7 @@ venv.bak/
 # Results
 results/data.csv
 results/data.json
+results/data copy.json
 
 # Spyder project settings
 .spyderproject

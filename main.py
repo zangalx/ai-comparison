@@ -55,6 +55,16 @@ if not os.path.exists('results/data.json'):
 with open('results/data.json', 'r') as file:
     data = json.load(file)
 
+
+# get the total number of questions
+total_questions = sum(len(book["questions"]) for book in data["data"])
+question_counter = 0
+
+# initialize the counters
+data['results']['sumCorrectGPT4oAnswers'] = 0
+data['results']['sumCorrectGeminiAnswers'] = 0
+data['results']['sumCorrectClaudeAnswers'] = 0
+
 # loop through the books in the data.json file
 for book in data["data"]:
 
@@ -64,7 +74,9 @@ for book in data["data"]:
     # loop through the questions in each book
     for question in book["questions"]:
 
-        print("question" + question['question'])
+        question_counter += 1
+        print(f"({question_counter}/{total_questions}): {question['question']}")
+
         system_prompt = f"Die folgende Frage bezieht sich auf das Buch: {booktitel} von {bookauthor}. {basic_prompt}"
         if question['type'] == 'OpenQuestion':
             system_prompt = f"Die folgende Frage bezieht sich auf das Buch: {booktitel} von {bookauthor}. Vervollständige den gegebenen Satz, indem du den fehlenden Teil angibst. Ergänze nicht den Anfang und ergänze auch sonst keine weiteren pre oder post Nachrichten. Wenn du dir nicht sicher bist, antworte lieber garnicht. Hier ist der Satzanfang aus dem Buch: " + question['question']
@@ -73,24 +85,38 @@ for book in data["data"]:
             # access the gpt4o api and write the answer to the data.json file
             if 'gPT4o' not in question['answers'] or not question['answers']['gPT4o']:
                 question['answers']['gPT4o'] = openAIRequest(question['question'])
-                if question['answers']['gPT4o'].strip().upper() == question['solution']:
-                    data['results']['sumCorrectGPT4oAnswers'] += 1
+            if question['answers']['gPT4o'].strip().upper() == question['solution']:
+                data['results']['sumCorrectGPT4oAnswers'] += 1
 
             # access the gemini api
             if 'gemini' not in question['answers'] or not question['answers']['gemini']:
                 question['answers']['gemini'] = geminiRequest(question['question'])
-                if question['answers']['gemini'].strip().upper() == question['solution']:
-                    data['results']['sumCorrectGeminiAnswers'] += 1
+            if question['answers']['gemini'].strip().upper() == question['solution']:
+                data['results']['sumCorrectGeminiAnswers'] += 1
 
             # access the claude api
             if 'claude' not in question['answers'] or not question['answers']['claude']:
                 question['answers']['claude'] = anthropicRequest(question['question'])
-                if question['answers']['claude'].strip().upper() == question['solution']:
-                    data['results']['sumCorrectClaudeAnswers'] += 1
+            if question['answers']['claude'].strip().upper() == question['solution']:
+                data['results']['sumCorrectClaudeAnswers'] += 1
                     
         except Exception as e:
             print(f"Error: {e}")
             # continue
+
+
+'''
+# loop through the books in the data.json file again
+for book in data["data"]:
+    # loop through the questions in each book
+    for question in book["questions"]:
+        # check if the answers are correct and increment the counters
+        if question['answers']['gPT4o'].strip().upper() == question['solution']:
+            data['results']['sumCorrectGPT4oAnswers'] += 1
+        if question['answers']['gemini'].strip().upper() == question['solution']:
+            data['results']['sumCorrectGeminiAnswers'] += 1
+        if question['answers']['claude'].strip().upper() == question['solution']:
+            data['results']['sumCorrectClaudeAnswers'] += 1'''
 
 
     
