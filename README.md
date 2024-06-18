@@ -1,4 +1,5 @@
 # ai-comparison
+Repro to compare ChatGPT with Gemini and Claude in a predefined format. Current goal is to ask multiple choice questions to different books and compare the different answers in their correctness. 
 
 ## create a virtual environment
 <code>python -m venv .venv</code> or <code>python3 -m venv .venv</code>

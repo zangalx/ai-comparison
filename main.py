@@ -40,7 +40,7 @@ def anthropicRequest(question):
     return message.content[0].text
 
 
-basic_prompt = "Du bist ein Assistent, der die Kunst der Sprache beherrscht und allgemein literarisch interessiert bist. Nennen einfach den Buchstaben der Antwort, die du für richtig hälst. Oder versuchen zumindest, die Frage auf die beste Weise zu beantworten. Wenn du dir nicht sicher bist, antworte lieber garnicht. Füge keine Vor- oder Nachbemerkungen hinzu. Ich möchte nur den richtigen Buchstaben genannt bekommen."
+basic_prompt = "Du bist ein Assistent, der die Kunst der Sprache beherrscht und allgemein literarisch interessiert ist. Nennen einfach den Buchstaben der Antwort, die du für richtig hälst. Oder versuchen zumindest, die Frage auf die beste Weise zu beantworten. Wenn du dir nicht sicher bist, antworte lieber garnicht. Füge keine Vor- oder Nachbemerkungen hinzu. Ich möchte nur den richtigen Buchstaben genannt bekommen."
 
 # check if subfolder "results" exists, if not create it
 if not os.path.exists('results'):
@@ -103,22 +103,6 @@ for book in data["data"]:
         except Exception as e:
             print(f"Error: {e}")
             # continue
-
-
-'''
-# loop through the books in the data.json file again
-for book in data["data"]:
-    # loop through the questions in each book
-    for question in book["questions"]:
-        # check if the answers are correct and increment the counters
-        if question['answers']['gPT4o'].strip().upper() == question['solution']:
-            data['results']['sumCorrectGPT4oAnswers'] += 1
-        if question['answers']['gemini'].strip().upper() == question['solution']:
-            data['results']['sumCorrectGeminiAnswers'] += 1
-        if question['answers']['claude'].strip().upper() == question['solution']:
-            data['results']['sumCorrectClaudeAnswers'] += 1'''
-
-
     
 # write the updated data back to the json file
 with open('results/data.json', 'w') as file:
